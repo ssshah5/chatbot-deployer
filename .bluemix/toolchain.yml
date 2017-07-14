@@ -40,3 +40,12 @@ form:
       prod-app-name: '{{services.sample-repo.parameters.repo_name}}'
     schema:
       $ref: deploy.json
+      
+# Github repos
+sample-repo:
+  service_id: githubpublic
+  parameters:
+    repo_name: "sample-chatbot"
+    repo_url: https://github.com/ssshah5/chatbot-deployer.git
+    type: clone
+    has_issues: false
