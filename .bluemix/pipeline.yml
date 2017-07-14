@@ -10,7 +10,7 @@ stages:
     type: text
   triggers:
   - type: stage
-  - enabled: false
+  - enabled: true
   jobs:
   - name: Deploy Chatbot Assets
     type: deployer
