@@ -34,18 +34,16 @@ services:
           PROD_ORG_NAME: '{{form.pipeline.parameters.prod-organization}}'
           PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
         execute: true
+  sample-chatbot:
+    service_id: githubpublic
+    parameters:
+      repo_name: "sample-chatbot"
+      repo_url: https://github.com/ssshah5/chatbot-deployer.git
+      type: clone
+      has_issues: false
 form:
   pipeline:
     parameters:
       prod-app-name: '{{services.sample-repo.parameters.repo_name}}'
     schema:
       $ref: deploy.json
-      
-# Github repos
-sample-repo:
-  service_id: githubpublic
-  parameters:
-    repo_name: "sample-chatbot"
-    repo_url: https://github.com/ssshah5/chatbot-deployer.git
-    type: clone
-    has_issues: false
