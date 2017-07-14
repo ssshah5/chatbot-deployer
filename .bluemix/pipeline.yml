@@ -8,6 +8,9 @@ stages:
   - name: CHATBOT_NAME
     value: '${CHATBOT_NAME}'
     type: text
+  triggers:
+  - type: stage
+  - enabled: false
   jobs:
   - name: Deploy Chatbot Assets
     type: deployer
